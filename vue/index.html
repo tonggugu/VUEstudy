@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World</title>
+        <script src='./vue.js'></script>
+
+    </head>
+    <body>
+        <!-- <div id="app">{{content}}</div> -->
+        <div id="app">
+            <input type="text" v-model="inputValue">
+            <button v-on:click="handleBtnClick">提交</button>
+             <ul>
+                 <li v-for="item in list">{{item}}</li>
+                 <!-- <li>第一课的内容</li>
+                 <li>第二课的内容</li> -->
+             </ul>
+        </div>
+        <script>
+            // var dom = document.getElementById('app');
+            // dom.innerHTML ='hello world'    
+            // setTimeout(function(){
+            //     dom.innerHTML ='bye world' 
+            // },2000)
+            // var app = new Vue({
+            //     el:'#app',//示例负责管理的区域  接管内容
+            //     data:{
+            //         //定义了一组数据
+            //         content:'hello world 2'
+            //     }
+            // })
+            // setTimeout(function(){
+            //     //$data   data的别名  不需要关注dom的变化
+            //       app.$data.content="bye world"
+            // },2000)
+            var APP= new Vue({
+                el:'#app',
+                data:{
+                    list:[],
+                    inputValue:''
+                },
+                methods: {
+                    handleBtnClick: function(){
+                        alert('click')
+                    }
+                }
+            })
+        </script>
+
+    </body>
+
+</html>
